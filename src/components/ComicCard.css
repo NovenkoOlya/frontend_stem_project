@@ -1,0 +1,139 @@
+.comic-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-header, #191b26);
+    border: 1px solid var(--border-header, #2e303a);
+    border-radius: 16px;
+    overflow: hidden;
+    height: 100%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .comic-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Контейнер картинки з відносним позиціонуванням для бейджів */
+  .comic-cover-container {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: #000;
+  }
+  
+  .comic-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* Акуратне розміщення бейджів зверху зображення */
+  .comic-badges {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    z-index: 5;
+    pointer-events: none;
+  }
+  
+  .badge {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    backdrop-filter: blur(4px);
+  }
+  
+  .badge-promoted {
+    background: rgba(245, 158, 11, 0.9);
+    color: #000;
+  }
+  
+  .badge-condition {
+    background: rgba(15, 23, 42, 0.85);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-left: auto;
+  }
+  
+  /* Текстовий блок під обкладинкою */
+  .comic-info {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .comic-genre {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #6366f1;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+    display: block;
+  }
+  
+  .comic-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-h, #fff);
+    margin: 0 0 6px 0;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .comic-author {
+    font-size: 0.85rem;
+    color: var(--text-muted, #9ca3af);
+    margin: 0 0 14px 0;
+  }
+  
+  /* Нижня кнопка */
+  .comic-card-action {
+    margin-top: auto;
+  }
+  
+  .trade-btn {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    background: #6366f1;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.2s ease;
+  }
+  
+  .trade-btn:hover {
+    background: #4f46e5;
+  }
+  
+  .trade-btn.btn-promoted {
+    background: rgba(170, 59, 255, 0.15);
+    color: #c084fc;
+    border: 1px solid rgba(192, 132, 252, 0.4);
+  }
+  
+  .trade-btn.btn-promoted:hover {
+    background: rgba(170, 59, 255, 0.25);
+  }

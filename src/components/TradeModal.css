@@ -1,0 +1,152 @@
+.trade-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(6px);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  .trade-modal-container {
+    background-color: var(--bg-header);
+    border: 1px solid var(--border-header);
+    border-radius: 20px;
+    max-width: 750px;
+    width: 100%;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .trade-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .trade-modal-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-h);
+    margin: 0;
+  }
+  
+  /* Сітка порівняння обміну */
+  .trade-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  @media (max-width: 640px) {
+    .trade-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .trade-box {
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-header);
+    border-radius: 14px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .trade-box-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .trade-comic-preview {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .trade-comic-img {
+    width: 65px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+/* Стилізація випадаючого списку */
+.select-my-comic {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border-header, #2e303a);
+  background-color: var(--bg-input, #1f2028);
+  color: var(--text-h, #f3f4f6);
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  appearance: none; /* Прибирає дефолтну стрілку браузера */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%9ca3af' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+.select-my-comic:focus {
+  border-color: var(--accent, #c084fc);
+  box-shadow: 0 0 0 2px var(--accent-bg, rgba(192, 132, 252, 0.15));
+}
+
+/* Обов'язкова стилізація елементів option всередині списку */
+.select-my-comic option {
+  background-color: #1f2028; /* Темний фон списку */
+  color: #f3f4f6;            /* Світлий читабельний текст */
+  padding: 10px;
+}
+
+/* Підтримка світлої теми (якщо немає класу .dark) */
+html:not(.dark) .select-my-comic option {
+  background-color: #ffffff;
+  color: #08060d;
+}
+  
+  .trade-send-btn {
+    background-color: #6366f1;
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .trade-send-btn:hover {
+    background-color: #4f46e5;
+  }
+  
+  .close-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+  }

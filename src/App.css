@@ -1,0 +1,35 @@
+/* Базові CSS-змінні (Темна тема за замовчуванням) */
+:root,
+body.dark,
+[data-theme='dark'] {
+  --bg: #0f172a !important;
+  --bg-header: #1e293b !important;
+  --bg-input: #334155 !important;
+  --bg-profile: rgba(99, 102, 241, 0.15) !important;
+  --border-header: #475569 !important;
+  --text-h: #f8fafc !important;
+  --text-muted: #94a3b8 !important;
+  color-scheme: dark;
+}
+
+/* Світла тема (перебиває темні змінні) */
+body.light,
+[data-theme='light'] {
+  --bg: #f8fafc !important;
+  --bg-header: #ffffff !important;
+  --bg-input: #f1f5f9 !important;
+  --bg-profile: rgba(99, 102, 241, 0.1) !important;
+  --border-header: #e2e8f0 !important;
+  --text-h: #0f172a !important;
+  --text-muted: #64748b !important;
+  color-scheme: light;
+}
+
+/* Примусове застосування змінних до сторінки */
+body {
+  margin: 0;
+  background-color: var(--bg) !important;
+  color: var(--text-h) !important;
+  font-family: system-ui, -apple-system, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
